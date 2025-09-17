@@ -6,6 +6,7 @@
 #include "../DXFramework/DXF.h"
 #include "ColourShader.h"
 #include "ColourTriangle.h"
+#include "ColourQuad.h"
 
 class App1 : public BaseApplication
 {
@@ -23,7 +24,7 @@ protected:
 
 private:
 	ColourShader* colourShader;
-	ColourTriangle* mesh;
+	ColourQuad* mesh;
 };
 
 #endif

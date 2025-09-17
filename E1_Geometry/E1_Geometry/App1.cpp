@@ -14,7 +14,7 @@ void App1::init(HINSTANCE hinstance, HWND hwnd, int screenWidth, int screenHeigh
 	BaseApplication::init(hinstance, hwnd, screenWidth, screenHeight, in, VSYNC, FULL_SCREEN);
 
 	// Create Mesh object
-	mesh = new ColourTriangle(renderer->getDevice(), renderer->getDeviceContext());
+	mesh = new ColourQuad(renderer->getDevice(), renderer->getDeviceContext());
 
 	colourShader = new ColourShader(renderer->getDevice(), hwnd);
 
@@ -78,6 +78,7 @@ bool App1::render()
 	mesh->sendData(renderer->getDeviceContext());
 	colourShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix);
 	colourShader->render(renderer->getDeviceContext(), mesh->getIndexCount());
+	
 
 	// Render GUI
 	gui();
